@@ -1,12 +1,12 @@
-@extends('fashotel.layout')
+@extends('faskamar.layout')
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Tampilkan Data Fasilitas Hotel </h2>
+                <h2> Tampilkan Fasilitas Kamar </h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('fashotel.index') }}"> Kembali</a>
+                <a class="btn btn-primary" href="{{ route('faskamar.index') }}"> Kembali</a>
             </div>
         </div>
     </div>
@@ -14,20 +14,20 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Nama Fasilitas:</strong>
-                {{ $fashotel->nama }}
+                <strong>Tipe Kamar:</strong>
+                {{ $faskamar->tipe_kamar }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Gambar:</strong>
-                {{ $fashotel->image }}
+                <strong>Jumlah Kamar:</strong>
+                {{ $faskamar->jml_kamar }}
             </div>
             </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Keterangan:</strong>
-                {{ $fashotel->keterangan }}
+                <strong>Nama Fasilitas:</strong>
+                {{ $faskamar->nama }}
             </div>
         </div>
     </div>

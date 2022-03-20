@@ -1,13 +1,13 @@
-@extends('fashotel.layout')
+@extends('faskamar.layout')
   
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Tambah Data Fasilitas Hotel Hebat</h2>
+            <h2>Tambah Data Fasilitas Kamar</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('fashotel.index') }}"> Kembali</a>
+            <a class="btn btn-primary" href="{{ route('faskamar.index') }}"> Kembali</a>
         </div>
     </div>
 </div>
@@ -23,26 +23,26 @@
     </div>
 @endif
    
-<form action="{{ route('fashotel.store') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('faskamar.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
   
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Nama Fasilitas:</strong>
-                <input type="text" name="nama" class="form-control" placeholder="Nama Failitas">
+                <strong>Tipe Kamar:</strong>
+                <input type="text" name="tipe_kamar" class="form-control" placeholder="Tipe Kamar">
             </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Gambar:</strong>
-                <input type="file" name="image" class="form-control-file" placeholder="Gambar">
+                <strong>Jumlah Kamar:</strong>
+                <input type="number" name="jml_kamar" class="form-control" placeholder="Jumlah Kamar">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Keterangan:</strong>
-                <textarea class="form-control" style="height:150px" name="keterangan" placeholder="Keterangan"></textarea>
+                <strong>Nama Fasilitas:</strong> 
+                <input type="text" name="nama" class="form-control" placeholder="Nama Fasilitas">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
