@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Carousel Template · Bootstrap v5.1</title>
+    <title>HOME GRAND VACATION HOTEL</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
 
@@ -28,7 +28,7 @@
     <style>
     .rata{
       text-align: justify;
-  text-justify: inter-word;
+       text-justify: inter-word;
     }
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -43,6 +43,13 @@
           font-size: 3.5rem;
         }
       }
+      input[type=number1]::-webkit-inner-spin-button, 
+input[type=number1]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
     </style>
 
     
@@ -50,28 +57,20 @@
   <body > 
     
 <header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color:rgb(118,155,245) ">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Carousel</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Kamar</a>
+            <a class="nav-link active" href="#">Kamar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled">Fasilitas</a>
+            <a class="nav-link active">Fasilitas</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
   </nav>
@@ -91,9 +90,7 @@
         <img class="bd-placeholder-img" width="100%" height="100%" src="{{url('/Gambar/ga2.jpg')}}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
         
         <div class="container">
-            <div class="carousel-caption text-start">
-                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-            </div>
+            
         </div>
    </div>
     <div class="carousel-item">
@@ -108,9 +105,7 @@
         <img class="bd-placeholder-img" width="100%" height="100%" src="{{url('/Gambar/ga5.jpg')}}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
 
         <div class="container">
-          <div class="carousel-caption text-end">
-            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -149,19 +144,111 @@
   </div>
 </div>
 </div>
-<div class="row g-3 align-items-center">
+<div class="container" style="margin-bottom:40px">
+        <form action="{{ route('reservasi.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+<div class="row g-3 align-items-center" style="margin-left:65px">
   <div class="col-auto">
-    <label for="inputPassword6" class="col-form-label">Password</label>
+    <label for="inputPassword6" class="col-form-label">Check In</label>
   </div>
   <div class="col-auto">
-    <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+    <input type="date" name="tgl_cekin" class="form-control" aria-describedby="passwordHelpInline">
   </div>
   <div class="col-auto">
-    <span id="passwordHelpInline" class="form-text">
-      Must be 8-20 characters long.
-    </span>
+    <label for="inputPassword6" class="col-form-label">Check Out</label>
+  </div>
+  <div class="col-auto">
+    <input type="date" name="tgl_cekout" class="form-control" aria-describedby="passwordHelpInline">
+  </div>
+   <div class="col-auto">
+    <label for="inputPassword6" class="col-form-label">Jumlah</label>
+  </div>
+  <div class="col-auto">
+    <input type="number" name="jml_kamar" class="form-control" aria-describedby="passwordHelpInline">
+  </div>
+
+  <div class="col-auto">
+  <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Pesan
+  </a>
   </div>
 </div>
+
+  <div class="collapse" id="collapseExample">
+      <div class="row g-3 align-items-center">
+        <div class="col-3">
+        <div class="card p-5" style="width: 35rem; height: 35rem; margin-left : 300px; margin-top : 80px"  >
+        <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Nama Pemesan</label>
+    <input type="text" name="nama_pemesan" class="form-control w-55" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email</label>
+    <input type="email" name="email" class="form-control w-55" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label" style="appearance: none;">No Handphone</label>
+    <input type="number1" name="no_hp" class="form-control w-55" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Nama Tamu</label>
+    <input type="text" name="nama_tamu" class="form-control w-55" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Tipe Kamar</label>
+    <input type="text" name="tipe_kamar" class="form-control w-55" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <button type="submit" class="btn" style="background-color :	red; color: white">Konfirmasi Pemesanan</button>
+  
+</form>
+</div>
+
+        </div>
+      </div>
+  </div>
+<div class="container p-6" >
+<p class="text-center fw-bold fs-2 mt-5 mb-5">ROOM</p>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+    <div class="card" style="width: 18rem;">
+  <img src="{{url('/Gambar/oke.jpg')}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">DELUXE ROOM Room with an area of ​​​​24 square meters. The room is equipped with a sofa .</p>
+  </div>
+</div>
+    </div>
+    <div class="col" >
+    <div class="card" style="width: 18rem;">
+  <img src="{{url('/Gambar/kamar.jpg')}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">
+    DELUXE PREMIUM This 26 sqm room is furnished with a modern and attractive design.</p>
+  </div>
+  
+</div>
+    </div>
+    <div class="col">
+    <div class="card" style="width: 18rem;">
+  <img src="{{url('/Gambar/gambar 3.jpg')}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">
+    JUNIOR SUITES
+36 sqm room, equipped with a set of table and chairs in the room.</p>
+  </div>
+    </div>
+  </div>
+</div>
+
+
+
+  
+
+
+</div>
+
 
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 

@@ -14,7 +14,8 @@ class reservasiController extends Controller
      */
     public function index()
     {
-        //
+        $reservasi = reservasi::latest()->paginate(5);
+        return view('reservasi.index',compact('reservasi'));
     }
 
     /**
@@ -24,7 +25,7 @@ class reservasiController extends Controller
      */
     public function create()
     {
-        //
+        return view('reservasi.create');
     }
 
     /**
@@ -35,7 +36,30 @@ class reservasiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        $request->validate([
+            'tgl_cekin' => 'required',
+            'tgl_cekout' => 'required',
+            'jml_kamar' => 'required',
+            'nama_pemesan' => 'required',
+            'email' => 'required',
+            'no_hp' => 'required',
+            'nama_tamu' => 'required',
+            'tipe_kamar' => 'required',
+        ]);
+
+
+        reservasi::create([
+            'tgl_cekin' => $request->tgl_cekin,
+            'tgl_cekout' => $request->tgl_cekout,
+            'jml_kamar' => $request->jml_kamar,
+            'nama_pemesan' => $request->nama_pemesan,
+            'email' => $request->email,
+            'no_hp' => $request->no_hp,
+            'nama_tamu' => $request->nama_tamu,
+            'tipe_kamar' => $request->tipe_kamar
+        ]);
+        return redirect()->route('welcome')->with('success','Data berhasil di input');
     }
 
     /**
@@ -46,7 +70,7 @@ class reservasiController extends Controller
      */
     public function show(reservasi $reservasi)
     {
-        //
+        return view('reservasi.show',compact('reservasi'));
     }
 
     /**
@@ -57,7 +81,7 @@ class reservasiController extends Controller
      */
     public function edit(reservasi $reservasi)
     {
-        //
+        return view('reservasi.edit',compact('reservasi'));
     }
 
     /**
@@ -69,7 +93,18 @@ class reservasiController extends Controller
      */
     public function update(Request $request, reservasi $reservasi)
     {
-        //
+        $request->validate([
+            'tgl_cekin' => 'required',
+            'tgl_cekout' => 'required',
+            'jml_kamar' => 'required',
+            'nama_pemesan' => 'required',
+            'email' => 'required',
+            'no_hp' => 'required',
+            'nama_tamu' => 'required',
+            'tipe_kamar' => 'required',
+        ]);
+        $reservasi->update($request->all());
+        return redirect()->route('reservasi.index')->with('success','Data Reservasi berhasil di update');
     }
 
     /**
@@ -80,6 +115,7 @@ class reservasiController extends Controller
      */
     public function destroy(reservasi $reservasi)
     {
-        //
+        $reservasi->delete();
+        return redirect()->route('reservasi.index')->with('success','Data Reservasi berhasil dihapus');
     }
 }

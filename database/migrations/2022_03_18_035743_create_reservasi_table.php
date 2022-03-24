@@ -18,6 +18,8 @@ class CreateReservasiTable extends Migration
             $table->date('tgl_cekin');
             $table->date('tgl_cekout');
             $table->integer('jml_kamar');
+            $table->string('email');
+            $table->string('no_hp');
             $table->string('nama_pemesan');
             $table->string('nama_tamu');
             $table->string('tipe_kamar');
