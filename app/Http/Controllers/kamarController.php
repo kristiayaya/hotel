@@ -14,7 +14,8 @@ class kamarController extends Controller
      */
     public function index()
     {
-        //
+        $kamar = kamar::latest()->paginate(5);
+        return view('kamar.index',compact('kamar'));
     }
 
     /**
@@ -24,7 +25,7 @@ class kamarController extends Controller
      */
     public function create()
     {
-        //
+        return view('kamar.create');
     }
 
     /**
@@ -35,7 +36,16 @@ class kamarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'tipe_kamar' => 'required',
+            'jml_kamar' => 'required',
+            ]);
+
+            kamar::create([
+                'tipe_kamar' => $request->tipe_kamar,
+                'jml_kamar' => $request->jml_kamar
+            ]);
+        return redirect()->route('kamar.index')->with('success','Data berhasil di input');
     }
 
     /**
@@ -46,7 +56,7 @@ class kamarController extends Controller
      */
     public function show(kamar $kamar)
     {
-        //
+        return view('kamar.show',compact('kamar'));
     }
 
     /**
@@ -57,7 +67,7 @@ class kamarController extends Controller
      */
     public function edit(kamar $kamar)
     {
-        //
+        return view('kamar.edit',compact('kamar'));
     }
 
     /**
@@ -69,7 +79,12 @@ class kamarController extends Controller
      */
     public function update(Request $request, kamar $kamar)
     {
-        //
+        $request->validate([
+            'tipe_kamar' => 'required',
+            'jml_kamar' => 'required',
+        ]);
+        $kamar->update($request->all());
+        return redirect()->route('kamar.index')->with('success','Data Kamar berhasil di update');
     }
 
     /**
@@ -80,6 +95,7 @@ class kamarController extends Controller
      */
     public function destroy(kamar $kamar)
     {
-        //
+        $kamar->delete();
+        return redirect()->route('kamar.index')->with('success','Data Kamar berhasil dihapus');
     }
 }

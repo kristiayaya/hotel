@@ -87,7 +87,7 @@ input[type=number1]::-webkit-outer-spin-button {
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="bd-placeholder-img" width="100%" height="100%" src="{{url('/Gambar/ga2.jpg')}}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+        <img class="bd-placeholder-img" width="100%" height="100%" src="{{url('/Gambar/anyar.jpg')}}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
         
         <div class="container">
             
@@ -102,7 +102,7 @@ input[type=number1]::-webkit-outer-spin-button {
         </div>
       </div>
       <div class="carousel-item">
-        <img class="bd-placeholder-img" width="100%" height="100%" src="{{url('/Gambar/ga5.jpg')}}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+        <img class="bd-placeholder-img" width="100%" height="100%" src="{{url('/Gambar/ga2.jpg')}}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
 
         <div class="container">
           
@@ -164,7 +164,7 @@ input[type=number1]::-webkit-outer-spin-button {
     <label for="inputPassword6" class="col-form-label">Jumlah</label>
   </div>
   <div class="col-auto">
-    <input type="number" name="jml_kamar" class="form-control" aria-describedby="passwordHelpInline">
+    <input type="number" min=0 name="jml_kamar" class="form-control" aria-describedby="passwordHelpInline">
   </div>
 
   <div class="col-auto">

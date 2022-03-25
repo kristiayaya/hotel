@@ -39,7 +39,7 @@ class fashotelController extends Controller
     {
         $request->validate([
             'nama' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,jfif|max:1024',
             'keterangan' => 'required',
         ]);
 
@@ -86,16 +86,12 @@ class fashotelController extends Controller
      */
     public function edit(fashotel $fashotel)
     {
+
+        // dd($fashotel->image);
+
         return view('fashotel.edit',compact('fashotel'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\fashotel  $fashotel
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, fashotel $fashotel)
     {
         $request->validate([

@@ -29,10 +29,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Tambah Data Fasilitas Kamar</h2>
+            <h2>Tambah Data Kamar</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('faskamar.index') }}"> Kembali</a>
+            <a class="btn btn-primary" href="{{ route('kamar.index') }}"> Kembali</a>
         </div>
     </div>
 </div>
@@ -48,7 +48,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
 @endif
    
-<form action="{{ route('faskamar.store') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('kamar.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
   
      <div class="row">
@@ -61,8 +61,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
            
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Nama Fasilitas:</strong> 
-                <input type="text" name="nama" class="form-control" placeholder="Nama Fasilitas">
+                <strong>Jumlah Kamar:</strong> 
+                <input type="number" name="jml_kamar" class="form-control" placeholder="Jumlah Kamar">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -71,7 +71,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
    
 </form>
-       
   <!-- Control Sidebar -->
   </div>
     <!-- Control sidebar content goes here -->

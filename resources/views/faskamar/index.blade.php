@@ -1,7 +1,32 @@
-@extends('faskamar.layout')
+
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+<head>
+  @include('Template.head')
+  <style>
+    .main-sidebar{
+        min-height:109% !important;
+    }
+  </style>
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  @include('Template.navbar')
+  <!-- /.navbar -->
+  @include('Template.sidebar')
+  <!-- Main Sidebar Container -->
  
-@section('content')
-    <div class="row">
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    
+  <!-- /.content-wrapper -->
+  <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2>Data Fasilitas Kamar</h2>
@@ -22,7 +47,6 @@
         <tr>
             <th>No</th>
             <th>Tipe Kamar</th>
-            <th>Jumlah Kamar</th>
             <th>Nama Fasilitas</th>
             <th>Aksi</th>
         </tr>
@@ -30,11 +54,8 @@
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $fas->tipe_kamar }}</td>
-            <td>{{ $fas->jml_kamar }}</td>
             <td>{{ $fas->nama }}</td>
-            <td>
-                <img src="{{ url('/thumbnail_images/') . '/' . $fas->image }}" alt="{{$fas->image}}">
-            </td>
+            
             <td>
                 <form action="{{ route('faskamar.destroy',$fas->id) }}" method="POST">
    
@@ -51,7 +72,24 @@
         </tr>
         @endforeach
     </table>
-  
-    {!! $faskamar->links() !!}
-      
-@endsection
+  <!-- Control Sidebar -->
+  </div>
+    <!-- Control sidebar content goes here -->
+  <!-- /.control-sidebar -->
+    </div>
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    @include('Template.footer')
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+@include('Template.script')
+</body>
+</html>
+
+ 
+
+ 

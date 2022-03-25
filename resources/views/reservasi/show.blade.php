@@ -29,10 +29,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Tampilkan Data Fasilitas Hotel </h2>
+                <h2> Tampilkan Data Reservasi </h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('fashotel.index') }}"> Kembali</a>
+                <a class="btn btn-primary" href="{{ route('reservasi.index') }}"> Kembali</a>
             </div>
         </div>
     </div>
@@ -40,26 +40,63 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Nama Fasilitas:</strong>
-                {{ $fashotel->nama }}
+                <strong>Tanggal Cek In:</strong>
+                {{ $reservasi->tgl_cekin }}
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Keterangan:</strong>
-                {{ $fashotel->keterangan }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Gambar:</strong>
-                <br>
-                <img src="{{ url('Gambar/') . '/' . $fashotel->image}}" alt="{{$fashotel->image}}" style="width:200px; height:150px">
-            
-            </div>
-            </div>
-    </div>
         
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Tanggal Cek Out:</strong>
+                {{ $reservasi->tgl_cekout }}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Jumlah Kamar:</strong>
+                {{ $reservasi->jml_kamar }}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Email:</strong>
+                {{ $reservasi->email }}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>No Handphone:</strong>
+                {{ $reservasi->no_hp }}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Nama Pemesanan:</strong>
+                {{ $reservasi->nama_pemesana }}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Nama Tamu:</strong>
+                {{ $reservasi->nama_tamu }}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Tipe Kamar:</strong>
+                {{ $reservasi->tipe_kamar }}
+            </div>
+        </div>
+
+    </div>
+   
+
   <!-- Control Sidebar -->
   </div>
     <!-- Control sidebar content goes here -->
@@ -79,3 +116,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </html>
 
  
+
+  

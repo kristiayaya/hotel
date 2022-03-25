@@ -1,13 +1,13 @@
-@extends('faskamar.layout')
+@extends('kamar.layout')
    
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Edit Fasilitas Kamar</h2>
+                <h2>Edit Data Kamar</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('faskamar.index') }}"> Kembali</a>
+                <a class="btn btn-primary" href="{{ route('kamar.index') }}"> Kembali</a>
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
         </div>
     @endif
   
-    <form action="{{ route('faskamar.update',$faskamar->id) }}" method="POST">
+    <form action="{{ route('kamar.update',$kamar->id) }}" method="POST">
         @csrf
         @method('PUT')
    
@@ -31,14 +31,14 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Tipe Kamar:</strong>
-                    <input type="text" name="tipe_kamar" value="{{ $faskamar->tipe_kamar }}" class="form-control" placeholder="Tipe Kamar">
+                    <input type="text" name="tipe_kamar" value="{{ $kamar->tipe_kamar }}" class="form-control" placeholder="Tipe Kamar">
                 </div>
             </div>
             
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Nama Fasilitas:</strong>
-                    <input type="text" name="nama" value="{{ $faskamar->nama }}" class="form-control" placeholder="Nama Fasilitas">
+                    <strong>Jumlah Kamar:</strong>
+                    <input type="number" name="jml_kamar" value="{{ $kamar->nama }}" class="form-control" placeholder="Jumlah Kamar">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

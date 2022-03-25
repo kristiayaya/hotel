@@ -38,6 +38,8 @@
                 <div class="form-group">
                     <strong>Gambar:</strong>
                     <input type="file" name="image" value="{{ $fashotel->image }}" class="form-control" placeholder="Gambar">
+                   
+                    <img src= "{{ asset("Gambar/$fashotel->image") }}" style="width:100;height:100px"/>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
