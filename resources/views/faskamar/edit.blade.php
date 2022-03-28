@@ -23,7 +23,7 @@
         </div>
     @endif
   
-    <form action="{{ route('faskamar.update',$faskamar->id) }}" method="POST">
+    <form action="{{ route('faskamar.update',$faskamar->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
    
@@ -41,6 +41,14 @@
                     <input type="text" name="nama" value="{{ $faskamar->nama }}" class="form-control" placeholder="Nama Fasilitas">
                 </div>
             </div>
+
+             <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Gambar:</strong>
+                    <input type="file" name="image" value="{{ $faskamar->image }}" class="form-control" placeholder="Gambar">
+                </div>
+            </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">EDIT</button>
             </div>

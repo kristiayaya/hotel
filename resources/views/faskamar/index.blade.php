@@ -48,6 +48,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <th>No</th>
             <th>Tipe Kamar</th>
             <th>Nama Fasilitas</th>
+            <th>Gambar</th>
             <th>Aksi</th>
         </tr>
         @foreach ($faskamar as $i => $fas)
@@ -55,6 +56,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <td>{{ ++$i }}</td>
             <td>{{ $fas->tipe_kamar }}</td>
             <td>{{ $fas->nama }}</td>
+            <td>
+            <img src="{{ url('/Gambar/') . '/' . $fas->image }}" alt="{{$fas->image}}" style="width:150px; height:100px">
+
+            </td>
             
             <td>
                 <form action="{{ route('faskamar.destroy',$fas->id) }}" method="POST">

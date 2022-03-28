@@ -16,10 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
+Route::get('/kamartamu', function () {
+    return view('ketkamar');
+})->name('tamu.kamar');
+// Route::get('/tamkam', function () {
+//     return view('Template.tamkam');
+// })->name('tamkam');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/fassuperior', 'tamuController@superior')->name('fassuperior');
+Route::get('/fasdeluxe', 'tamuController@deluxe')->name('fasdeluxe');
+Route::post('/cari', 'reservasiController@cari')->name('cari');
 Route::middleware('role:admin')->get('/dashboard', function(){
     return 'Dashboard';
 })->name('dashboard');

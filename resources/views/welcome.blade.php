@@ -62,17 +62,40 @@ input[type=number1]::-webkit-outer-spin-button {
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
          <li class="nav-item">
-            <img src="{{asset('Gambar/kristiaoke.png')}}" width="70px", height="50px"/>
+            <img src="{{asset('Gambar/kristiaoke.png')}}" width="50px", height="40px"/>
             </li>
           <li class="nav-item text-white">
-            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+            <a class="nav-link active text-white" aria-current="page" href="{{  route('welcome') }}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-white" href="#">Kamar</a>
+            <a class="nav-link active text-white" href="{{ route('tamu.kamar') }}">Kamar</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active text-white">Fasilitas</a>
           </li>
+         <li class="nav-item d-none d-sm-inline-block"></li>
+        
+        @if (Route::has('login'))
+                
+                    @auth
+                      <li class="nav-item">
+                        <a class="nav-link active text-white" href="{{ url('/home') }}">Home</a>
+                      </li>
+                    @else
+                      <li class="nav-item">
+                        <a class="nav-link active text-white" href="{{ route('login') }}">Login</a>
+                      </li>
+
+                        @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" href="{{ route('register') }}">Register</a>
+                        </li>
+                        @endif
+                    @endauth
+                
+            @endif
+            
+        
         </ul>
       </div>
     </div>

@@ -51,6 +51,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 {{ $faskamar->nama }}
             </div>
         </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Gambar:</strong>
+                {{ $faskamar->image }}
+            </div>
+        </div>
+
     </div>
        
   <!-- Control Sidebar -->

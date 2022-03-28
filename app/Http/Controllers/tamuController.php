@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
 use App\tamu;
 use Illuminate\Http\Request;
 
@@ -12,19 +12,25 @@ class tamuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function superior()
     {
-        //
+        $faskamar = DB::table('faskamar')->where('tipe_kamar', 'superior')->get();
+        // dd($faskamar);
+        // dd($superior, $deluxe);
+        return view('Template.tamkam', compact('faskamar'));
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function deluxe()
     {
-        //
+        $faskamar = DB::table('faskamar')->where('tipe_kamar', 'deluxe')->get();
+        // dd($faskamar);
+        return view('Template.tamkam', compact('faskamar'));
+        
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Image;
 use App\faskamar;
 use Illuminate\Http\Request;
 
@@ -39,9 +40,19 @@ class faskamarController extends Controller
         $request->validate([
             'tipe_kamar' => 'required',
             'nama' => 'required',
+            'image' => 'required',
         ]);
 
-       
+        $image = $request->file('image');
+        $nameImage = $request->file('image')->getClientOriginalName();
+
+        $thumbImage = Image::make($image->getRealPath())->resize(100, 100);
+        $thumbPath = public_path() . '/Gambar/' . $nameImage;
+        $thumbImage = Image::make($thumbImage)->save($thumbPath);
+
+        $oriPath = public_path() . '/Gambar/' . $nameImage;
+        $oriImage = Image::make($image)->save($oriPath);
+
         // $mouseImage = new Image;
         // $mouseImage->imgname = $nameImage;
         // $mouseImage->normal_imgpath = $oriPath;
@@ -50,7 +61,8 @@ class faskamarController extends Controller
 
         faskamar::create([
             'tipe_kamar' => $request->tipe_kamar,
-            'nama' => $request->nama
+            'nama' => $request->nama,
+            'image' => $nameImage
         ]);
         return redirect()->route('faskamar.index')->with('success','Data berhasil di input');
     }
@@ -89,8 +101,22 @@ class faskamarController extends Controller
         $request->validate([
             'tipe_kamar' => 'required',
             'nama' => 'required',
+            
         ]);
-        $faskamar->update($request->all());
+        $image = $request->file('image');
+        $nameImage = $request->file('image')->getClientOriginalName();
+
+        $thumbImage = Image::make($image->getRealPath())->resize(100, 100);
+        $thumbPath = public_path() . '/Gambar/' . $nameImage;
+        $thumbImage = Image::make($thumbImage)->save($thumbPath);
+
+        $oriPath = public_path() . '/Gambar/' . $nameImage;
+        $oriImage = Image::make($image)->save($oriPath);
+        $faskamar->update([
+            'tipe_kamar' => $request->tipe_kamar,
+            'nama' => $request->nama,
+            'image' => $nameImage
+        ]);
         return redirect()->route('faskamar.index')->with('success','Fasilitas Kamar berhasil di update');
     }
 

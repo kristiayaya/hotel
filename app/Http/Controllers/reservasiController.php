@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
 use App\reservasi;
 use Illuminate\Http\Request;
 
@@ -18,6 +18,11 @@ class reservasiController extends Controller
         return view('reservasi.index',compact('reservasi'));
     }
 
+    public function cari(Request $request )
+    {
+        $reservasi = DB::table('reservasi')->where('nama_tamu', $request->cari)->get();
+        return view('reservasi.index',compact('reservasi'));
+    }
     /**
      * Show the form for creating a new resource.
      *

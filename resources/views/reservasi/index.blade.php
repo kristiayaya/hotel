@@ -37,17 +37,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
       <!-- SidebarSearch Form -->
-      <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+
+<br>
+<div class="container">
+  <div class="row row-md-5">
+  <div class="col col-md-2">
+      <form action="{{route('cari')}}" method="post" style="width:100px; height:30px;">
+      @csrf
+      
+        <div class="input-group" data-widget="sidebar-search" style="width:250px; height:30px;">
+          <input class="form-control form-control-sidebar"name="cari" type="search" placeholder="Search" aria-label="Search">
           <div class="input-group-append">
-            <button class="btn btn-sidebar">
+            <button type="submit" class="btn btn-sidebar">
               <i class="fas fa-search fa-fw"></i>
             </button>
           </div>
-        </div>
       </div>
-
+      </form>
+      </div>
+    <div class="col col-md-5">
+    </div>
+    <div class="col col-md-5">
+    <!-- <label for="inputPassword6" class="col-form-label">Check In</label> -->
+    <input type="date" name="tgl_cekout" class="form-control" aria-describedby="passwordHelpInline" style="height:40px; margin-right:300px">
+    </div>
+   
+      
+    
+  </div>
+</div>
 
    <br>
     @if ($message = Session::get('success'))
