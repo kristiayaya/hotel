@@ -57,18 +57,21 @@ input[type=number1]::-webkit-outer-spin-button {
   <body > 
     
 <header>
-  <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color:rgb(118,155,245) ">
+  <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color:rgb(38,36,36) ">
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+         <li class="nav-item">
+            <img src="{{asset('Gambar/kristiaoke.png')}}" width="70px", height="50px"/>
+            </li>
+          <li class="nav-item text-white">
+            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">Kamar</a>
+            <a class="nav-link active text-white" href="#">Kamar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active">Fasilitas</a>
+            <a class="nav-link active text-white">Fasilitas</a>
           </li>
         </ul>
       </div>
@@ -87,14 +90,14 @@ input[type=number1]::-webkit-outer-spin-button {
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="bd-placeholder-img" width="100%" height="100%" src="{{url('/Gambar/anyar.jpg')}}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+        <img class="bd-placeholder-img" width="100%" height="100%" src="{{url('/Gambar/coba.jpg')}}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
         
         <div class="container">
             
         </div>
    </div>
     <div class="carousel-item">
-        <img class="bd-placeholder-img" width="100%" height="100%" src="{{url('/Gambar/ga1.jpg')}}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+        <img class="bd-placeholder-img" width="100%" height="100%" src="{{url('/Gambar/ruang.jpg')}}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
 
         <div class="container">
           <div class="carousel-caption">
@@ -102,7 +105,7 @@ input[type=number1]::-webkit-outer-spin-button {
         </div>
       </div>
       <div class="carousel-item">
-        <img class="bd-placeholder-img" width="100%" height="100%" src="{{url('/Gambar/ga2.jpg')}}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+        <img class="bd-placeholder-img" width="100%" height="100%" src="{{url('/Gambar/siap.jpg')}}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
 
         <div class="container">
           
@@ -198,7 +201,7 @@ input[type=number1]::-webkit-outer-spin-button {
     <label for="exampleInputEmail1" class="form-label">Tipe Kamar</label>
     <input type="text" name="tipe_kamar" class="form-control w-55" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
-  <button type="submit" class="btn" style="background-color :	red; color: white">Konfirmasi Pemesanan</button>
+  <button type="submit" class="btn" style="background-color :	Navy; color: white">Konfirmasi Pemesanan</button>
   
 </form>
 </div>

@@ -31,12 +31,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="pull-left">
                 <h2>Data Reservasi</h2>
             </div>
-            <div class="pull-right">
-        
-                <a class="btn btn-success" href="{{ route('reservasi.create') }}"> Input Data</a>
-            </div>
+            
         </div>
     </div>
+
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+
    <br>
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -65,7 +77,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <td>{{ $fas->jml_kamar }}</td>
             <td>{{ $fas->email }}</td>
             <td>{{ $fas->no_hp }}</td>
-            <td>{{ $fas->nama_pemesanan }}</td>
+            <td>{{ $fas->nama_pemesan }}</td>
             <td>{{ $fas->nama_tamu }}</td>
             <td>{{ $fas->tipe_kamar }}</td>
             
