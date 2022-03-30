@@ -14,13 +14,24 @@ class reservasiController extends Controller
      */
     public function index()
     {
+        
+
         $reservasi = reservasi::latest()->paginate(5);
         return view('reservasi.index',compact('reservasi'));
     }
 
     public function cari(Request $request )
     {
+        
         $reservasi = DB::table('reservasi')->where('nama_tamu', $request->cari)->get();
+        return view('reservasi.index',compact('reservasi'));
+    }
+
+
+    public function filtering(Request $request)
+    {
+        // dd($request->tgl_cekin);
+        $reservasi = DB::table('reservasi')->where('tgl_cekin', $request->tgl_cekin)->get();
         return view('reservasi.index',compact('reservasi'));
     }
     /**
@@ -122,5 +133,12 @@ class reservasiController extends Controller
     {
         $reservasi->delete();
         return redirect()->route('reservasi.index')->with('success','Data Reservasi berhasil dihapus');
+    }
+
+
+    public function cetak(Request $id)
+    {
+        $print = DB::table('reservasi')->where('id', $id->id)->get();
+        return view('reservasi.cetak', compact('print'));
     }
 }

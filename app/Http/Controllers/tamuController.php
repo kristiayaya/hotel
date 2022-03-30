@@ -33,6 +33,13 @@ class tamuController extends Controller
         
     }
 
+
+    public function fasilitashotel( )
+    {
+        $fashotel = DB::table('fashotel')->get();
+
+        return view('fashotel.tampilanhotel', compact('fashotel'));
+    }
     /**
      * Store a newly created resource in storage.
      *

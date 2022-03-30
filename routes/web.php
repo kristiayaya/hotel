@@ -14,11 +14,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 })->name('welcome');
+
 Route::get('/kamartamu', function () {
     return view('ketkamar');
 })->name('tamu.kamar');
+
+Route::get('/Beranda', function () {
+    return view('welcome');
+})->name('beranda');
+
+Route::get('/FasilitasHotel', function () {
+    return view('fashotel.tampilanhotel');
+})->name('fashotel.tampilanhotel');
+
+Route::get('/FasilitasHotel', 'tamuController@fasilitashotel')->name('FasilitasHotel');
+
+Route::get('/tampilanhoteltamu', function () {
+    return view('tampilanhotel');
+})->name('tamhotel');
+// Route::get('/cetak', function () {
+//     return view('reservasi.cetak');
+// })->name('cetak');
 // Route::get('/tamkam', function () {
 //     return view('Template.tamkam');
 // })->name('tamkam');
@@ -28,7 +46,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/fassuperior', 'tamuController@superior')->name('fassuperior');
 Route::get('/fasdeluxe', 'tamuController@deluxe')->name('fasdeluxe');
+Route::get('/datareservasi', 'datareservasiController@index')->name('datareservasi');
 Route::post('/cari', 'reservasiController@cari')->name('cari');
+Route::post('/cetak/{id}', 'reservasiController@cetak')->name('cetak');
+Route::post('/filtering', 'reservasiController@filtering')->name('reservasi.filtering');
+Route::get('/tampilanhotel', 'resepsionisController@show')->name('tampilanku');
 Route::middleware('role:admin')->get('/dashboard', function(){
     return 'Dashboard';
 })->name('dashboard');

@@ -42,7 +42,8 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         if ($user->hasRole('tamu')){
-            return redirect()->route('welcome');
+            return redirect()->route('beranda');
+            // return view('welcome');
         }
         return redirect()->route('home');
     }

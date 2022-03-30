@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\resepsionis;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class resepsionisController extends Controller
      */
     public function index()
     {
-        //
+        $fashotel = DB::table('fashotel')->get();
+        return view('fashotel.tampilanhotel', compact('fashotel'));
     }
 
     /**
@@ -46,7 +48,8 @@ class resepsionisController extends Controller
      */
     public function show(resepsionis $resepsionis)
     {
-        //
+        $fashotel = DB::table('fashotel')->get();
+        return view('fashotel.tampilanhotel', compact('fashotel'));
     }
 
     /**

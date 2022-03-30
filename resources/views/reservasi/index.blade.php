@@ -40,13 +40,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <br>
 <div class="container">
-  <div class="row row-md-5">
-  <div class="col col-md-2">
-      <form action="{{route('cari')}}" method="post" style="width:100px; height:30px;">
+  <div class="row ">
+  <div class="col col-md-1">
+      <form action="{{route('cari')}}" method="post" style="width:200px; height:30px; margin-left:-150px;">
       @csrf
       
-        <div class="input-group" data-widget="sidebar-search" style="width:250px; height:30px;">
-          <input class="form-control form-control-sidebar"name="cari" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group" data-widget="sidebar-search" style="width:250px; height:40px;">
+          <input class="form-control form-control-sidebar"name="cari" type="search" placeholder="Cari Nama Tamu" aria-label="Search" style="width:200px; height:40px;">
           <div class="input-group-append">
             <button type="submit" class="btn btn-sidebar">
               <i class="fas fa-search fa-fw"></i>
@@ -55,18 +55,38 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div>
       </form>
       </div>
-    <div class="col col-md-5">
+    <div class="col col-md-9">
     </div>
-    <div class="col col-md-5">
+      <form action="{{route('reservasi.filtering')}}"  style="width:50px; height:30px;" method="post">
+    <div class="col col-md-4">
+      @csrf
+    <div class="row row-md-5">
+      <div class="col col-md-6">
+      <input type="date" name="tgl_cekin" class="form-control" aria-describedby="passwordHelpInline" style="height:40px; width:200px; margin-right:0px">
+   </div>
+      <div class="col col-md-6">
+      <button class="btn btn-warning" type="submit" style="margin-left:210px; top:-40px; position: relative;">cari</button>
+    </div>
+    </div>  
+    </form>
+      
+
     <!-- <label for="inputPassword6" class="col-form-label">Check In</label> -->
-    <input type="date" name="tgl_cekout" class="form-control" aria-describedby="passwordHelpInline" style="height:40px; margin-right:300px">
+    
+    
+          </div>
     </div>
+
+
+
+    <div class="input-group-append">
    
       
     
   </div>
 </div>
 
+   <br>
    <br>
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
