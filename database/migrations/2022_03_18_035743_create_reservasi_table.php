@@ -17,6 +17,7 @@ class CreateReservasiTable extends Migration
             $table->id('id');
             $table->date('tgl_cekin');
             $table->date('tgl_cekout');
+            $table->integer('id_user'); 
             $table->integer('jml_kamar');
             $table->string('email');
             $table->string('no_hp');

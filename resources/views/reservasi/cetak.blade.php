@@ -8,7 +8,15 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <style>.geser{margin-left:200px;
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    
+    <style>
+        html{
+          -webkit-print-color-adjust: exact;
+        }
+    .geser{margin-left:200px;
     }
     .geser1{
       margin-left:5px;
@@ -29,9 +37,9 @@
     <title>Cetak</title>
   </head>
   <body>
-  <div class="card geser border-success mb-3" style="max-width: 63rem; top:50px; margin-left:20px; padding-bottom:0px; ">
-  <div class="card-header bg-transparent border-success" style="height:100px; font-weight: bold;" ><center>Bukti Data Reservasi</center></div>
-  <div class="card-body border-success">
+  <div class="card geser border-danger mb-3" style="max-width: 63rem; top:50px; margin-left:20px; padding-bottom:0px; ">
+  <div class="card-header bg-danger text-white"  style="height:100px; font-weight: bold; font-size:50px; " ><center>Bukti Data Reservasi</center></div>
+  <div class="card-body border-danger">
   <div class="row g-3 align-items-center" style="margin-left:65px">
   <div class="col-auto">
     <label for="inputPassword6" class="col-form-label">Tanggal Check In</label>
@@ -55,7 +63,7 @@
 <br>
 <br>
 <br>
-<div class="card" style="width: 53rem;">
+<div class="card border-danger" style="width: 53rem;">
 <br>
 
 <div class="mb-2 row">
@@ -106,7 +114,7 @@
   
 </div>
 <br> 
-<p class="text-center"><b>Grand Vacation Hotel </b></p>
+<p class="text-center" style="font-family: 'Lobster', cursive; font-size:20px; "><b>Grand Vacation Hotel </b></p>
 
 
 

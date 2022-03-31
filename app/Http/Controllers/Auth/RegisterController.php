@@ -71,6 +71,13 @@ class RegisterController extends Controller
         ]);
         $user->assignRole('tamu');
 
+ 
         return $user;
+    }protected function registered()
+    {
+        $this->guard()->logout();
+        return redirect()->route('login')->with('succes', "Akun Anda Berhasil Teregristasi, Silahkan Untuk Login Ulang");
     }
-}
+        // return view('auth.login')->with($user);
+    }
+

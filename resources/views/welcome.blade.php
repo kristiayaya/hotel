@@ -120,9 +120,15 @@
     <input type="text" name="nama_tamu" class="form-control w-55" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Tipe Kamar</label>
-    <input type="text" name="tipe_kamar" class="form-control w-55" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <label for="exampleInputPassword1" class="form-label" style="appearance: none;">Tipe Kamar</label>
+
+      <select name="tipe_kamar" id="tipe_kamar" class="form-control">
+          <option selected class="form-select form-check disabled text-muted" aria-label="disabled select example" disabled>Pilih salah satu tipe kamar</option>
+          <option value="superior">Superior</option>
+          <option value="deluxe">Deluxe</option>
+      </select>
   </div>
+   
   <button type="submit" class="btn" style="background-color :	Navy; color: white">Konfirmasi Pemesanan</button>
   
 </form>

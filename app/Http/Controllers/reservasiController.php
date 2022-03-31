@@ -53,6 +53,11 @@ class reservasiController extends Controller
     public function store(Request $request)
     {
         // dd($request);
+
+        $id = auth()->user()->id;
+        
+        // dd($id);
+        
         $request->validate([
             'tgl_cekin' => 'required',
             'tgl_cekout' => 'required',
@@ -73,9 +78,10 @@ class reservasiController extends Controller
             'email' => $request->email,
             'no_hp' => $request->no_hp,
             'nama_tamu' => $request->nama_tamu,
-            'tipe_kamar' => $request->tipe_kamar
+            'tipe_kamar' => $request->tipe_kamar,
+            'id_user' => $id,
         ]);
-        return redirect()->route('welcome')->with('success','Data berhasil di input');
+        return redirect()->route('datareservasi')->with('success','Data berhasil di input');
     }
 
     /**

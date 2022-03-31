@@ -14,7 +14,9 @@ class datareservasiController extends Controller
      */
     public function index()
     {
-       $data = DB::table('reservasi')->where('email', auth()->user()->email)->get();
+        $id = auth()->user()->id;
+        // dd($id);
+       $data = DB::table('reservasi')->where('id_user', $id )->get();
        return view('reservasi.datareservasi',compact('data'));
     }
 
