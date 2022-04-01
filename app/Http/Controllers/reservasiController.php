@@ -56,11 +56,13 @@ class reservasiController extends Controller
 
         $id = auth()->user()->id;
         
+        $jumlah_awal = DB::table('kamar')->where('tipe_kamar', $request->tipe_kamar)->value('jml_kamar');
+
         // dd($id);
         
         $request->validate([
             'tgl_cekin' => 'required',
-            'tgl_cekout' => 'required',
+            'tgl_cekout' => 'required|after_or_equal:tgl_cekin',
             'jml_kamar' => 'required',
             'nama_pemesan' => 'required',
             'email' => 'required',
@@ -81,6 +83,11 @@ class reservasiController extends Controller
             'tipe_kamar' => $request->tipe_kamar,
             'id_user' => $id,
         ]);
+
+        DB::table('kamar')->where('tipe_kamar', $request->tipe_kamar)->update([
+            'jml_kamar' => $jumlah_awal - $request->jml_kamar
+        ]);
+
         return redirect()->route('datareservasi')->with('success','Data berhasil di input');
     }
 

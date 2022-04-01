@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\kamar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class kamarController extends Controller
 {
@@ -36,15 +37,24 @@ class kamarController extends Controller
      */
     public function store(Request $request)
     {
+        $jumlah_awal = DB::table('kamar')->where('tipe_kamar', $request->tipe_kamar)->value('jml_kamar');
+        // dd($jumlah_awal);
+        
         $request->validate([
             'tipe_kamar' => 'required',
             'jml_kamar' => 'required',
             ]);
 
-            kamar::create([
-                // 'tipe_kamar' => $request->tipe_kamar,
-                'jml_kamar' => $request->jml_kamar
-            ]);
+        DB::table('kamar')->where('tipe_kamar', $request->tipe_kamar)->update([
+            'jml_kamar' => $jumlah_awal + $request->jml_kamar,
+        ]);
+
+        
+
+            // kamar::create([
+            //     'tipe_kamar' => $request->tipe_kamar,
+            //     'jml_kamar' => $request->jml_kamar
+            // ]);
         return redirect()->route('kamar.index')->with('success','Data berhasil di input');
     }
 

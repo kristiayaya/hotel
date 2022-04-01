@@ -61,6 +61,17 @@
     <p class="card-text rata justify-text-center">Welcome to Grand Vacation Hotel. A hotel with a comfortable atmosphere and suitable for holidays. enjoy time with family, relatives, friends and certain occasions. There are various facilities, both room facilities and general hotel facilities that complement comfort and satisfaction. Let's enjoy your comfortable rest with Grand Vacation Hotel.</p>
   </div>
 </div>
+
+@if ($errors->any())
+<div class="alert alert-danger">
+    <strong>Maaf</strong> Data yang anda inputkan bermasalah.<br><br>
+    <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
  
     </div>
     <div class="col">
@@ -72,7 +83,7 @@
 <div class="container" style="margin-bottom:40px">
         <form action="{{ route('reservasi.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
-<div class="row g-3 align-items-center" style="margin-left:65px">
+<div class="row g-3 align-items-center" style="margin-left:150px">
   <div class="col-auto">
     <label for="inputPassword6" class="col-form-label">Check In</label>
   </div>
@@ -124,8 +135,8 @@
 
       <select name="tipe_kamar" id="tipe_kamar" class="form-control">
           <option selected class="form-select form-check disabled text-muted" aria-label="disabled select example" disabled>Pilih salah satu tipe kamar</option>
-          <option value="superior">Superior</option>
-          <option value="deluxe">Deluxe</option>
+          <option value="Superior">Superior</option>
+          <option value="Deluxe">Deluxe</option>
       </select>
   </div>
    
@@ -137,46 +148,5 @@
         </div>
       </div>
   </div>
-<div class="container p-6" >
-<p class="text-center fw-bold fs-2 mt-5 mb-5">ROOM</p>
 
-
-<div class="container">
-  <div class="row">
-    <div class="col">
-    <div class="card" style="width: 18rem;">
-  <img src="{{url('/Gambar/oke.jpg')}}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">DELUXE ROOM Room with an area of ​​​​24 square meters. The room is equipped with a sofa .</p>
-  </div>
-</div>
-    </div>
-    <div class="col" >
-    <div class="card" style="width: 18rem;">
-  <img src="{{url('/Gambar/kamar.jpg')}}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">
-    DELUXE PREMIUM This 26 sqm room is furnished with a modern and attractive design.</p>
-  </div>
-  
-</div>
-    </div>
-    <div class="col">
-    <div class="card" style="width: 18rem;">
-  <img src="{{url('/Gambar/gambar 3.jpg')}}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">
-    JUNIOR SUITES
-36 sqm room, equipped with a set of table and chairs in the room.</p>
-  </div>
-    </div>
-  </div>
-</div>
-
-
-
-  
-
-
-</div>
 @endsection

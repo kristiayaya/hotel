@@ -19,11 +19,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Navbar -->
   @include('Template.navbar')
   <!-- /.navbar -->
-  @include('Template.sidebar')
   <!-- Main Sidebar Container -->
  
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="container mt-3">
     
   <!-- /.content-wrapper -->
   <div class="row">
@@ -53,10 +52,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
   
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <strong>Tipe Kamar:</strong>
                 <input type="text" name="tipe_kamar" class="form-control" placeholder="Tipe Kamar">
-            </div>
+            </div> --}}
+            <select name="tipe_kamar" id="tipe_kamar" class="form-control mb-3">
+                    <option selected class="form-select form-check disabled text-muted" aria-label="disabled select example" disabled>Pilih salah satu tipe kamar</option>
+                    <option value="Superior">Superior</option>
+                    <option value="Deluxe">Deluxe</option>
+                </select>
             </div>
            
         <div class="col-xs-12 col-sm-12 col-md-12">
