@@ -42,7 +42,7 @@ class kamarController extends Controller
             ]);
 
             kamar::create([
-                'tipe_kamar' => $request->tipe_kamar,
+                // 'tipe_kamar' => $request->tipe_kamar,
                 'jml_kamar' => $request->jml_kamar
             ]);
         return redirect()->route('kamar.index')->with('success','Data berhasil di input');

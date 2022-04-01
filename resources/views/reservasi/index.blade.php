@@ -19,11 +19,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Navbar -->
   @include('Template.navbar')
   <!-- /.navbar -->
-  @include('Template.sidebar')
+
   <!-- Main Sidebar Container -->
  
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="container mt-3">
+
     
   <!-- /.content-wrapper -->
   <div class="row">

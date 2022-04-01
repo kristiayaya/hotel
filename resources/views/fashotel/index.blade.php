@@ -19,11 +19,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Navbar -->
   @include('Template.navbar')
   <!-- /.navbar -->
-  @include('Template.sidebar')
   <!-- Main Sidebar Container -->
  
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="container mt-3">
     
   <!-- /.content-wrapper -->
   <div class="row">
@@ -82,10 +81,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Control sidebar content goes here -->
   <!-- /.control-sidebar -->
     </div>
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    @include('Template.footer')
-  </footer>
+
 </div>
 <!-- ./wrapper -->
 
