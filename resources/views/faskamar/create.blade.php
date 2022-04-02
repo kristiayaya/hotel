@@ -55,7 +55,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Tipe Kamar:</strong>
-                <input type="text" name="tipe_kamar" class="form-control" placeholder="Tipe Kamar">
+                 <select name="tipe_kamar" id="tipe_kamar" class="form-control">
+          <option selected class="form-select form-check disabled text-muted" aria-label="disabled select example" disabled>Pilih salah satu tipe kamar</option>
+          <option value="Superior">Superior</option>
+          <option value="Deluxe">Deluxe</option>
+      </select>
             </div>
             </div>
            

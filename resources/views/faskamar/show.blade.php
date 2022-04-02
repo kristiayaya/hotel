@@ -55,7 +55,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Gambar:</strong>
-                {{ $faskamar->image }}
+                <br>
+                <img src="{{ asset("Gambar/$faskamar->image") }}" alt="" class="img-thumbnail">
+
             </div>
         </div>
 

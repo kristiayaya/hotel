@@ -140,7 +140,7 @@
       </select>
   </div>
    
-  <button type="submit" class="btn" style="background-color :	Navy; color: white">Konfirmasi Pemesanan</button>
+  <button type="submit" class="btn btn-primary" style=" color: white">Konfirmasi Pemesanan</button>
   
 </form>
 </div>

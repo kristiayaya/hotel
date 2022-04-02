@@ -17,6 +17,7 @@ class CreateFaskamarTable extends Migration
             $table->id('id');
             $table->string('nama');
             $table->string('tipe_kamar');
+            $table->string('image');
             $table->timestamps();
         });
     }

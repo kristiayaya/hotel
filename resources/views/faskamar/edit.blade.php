@@ -48,6 +48,13 @@
                     <input type="file" name="image" value="{{ $faskamar->image }}" class="form-control" placeholder="Gambar">
                 </div>
             </div>
+             <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Gambar sebelumnya :</strong><br>
+                    <img src="{{ asset("Gambar/$faskamar->image") }}" alt="" class="img-thumbnail">
+
+                </div>
+            </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">EDIT</button>

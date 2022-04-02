@@ -101,6 +101,7 @@ class faskamarController extends Controller
         $request->validate([
             'tipe_kamar' => 'required',
             'nama' => 'required',
+            'image' => 'required',
             
         ]);
         $image = $request->file('image');
