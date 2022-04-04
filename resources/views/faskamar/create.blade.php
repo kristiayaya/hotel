@@ -23,15 +23,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Sidebar Container -->
  
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+ 
     
   <!-- /.content-wrapper -->
+<div class="container mt-5" style="margin-left: 60px; margin-top:20px;  " >
+
+
   <div class="row">
     <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
+        <div class="pull-left" style="margin-left:610px">
             <h2>Tambah Data Fasilitas Kamar</h2>
         </div>
-        <div class="pull-right">
+        <div class="pull-right" style="margin-top:40px; margin-left:65px;">
             <a class="btn btn-primary" href="{{ route('faskamar.index') }}"> Kembali</a>
         </div>
     </div>
@@ -48,9 +51,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
 @endif
    
+   <div class="container mt-5" style="margin-top: 40px; margin-left:60px;">
+   <div class="card text-dark bg-light mb-3" style="max-width: 500rem; width:90rem; ">
+
 <form action="{{ route('faskamar.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
   
+  <div class="card-body">
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
@@ -83,16 +90,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
    
 </form>
-       
+       </div>
   <!-- Control Sidebar -->
   </div>
     <!-- Control sidebar content goes here -->
   <!-- /.control-sidebar -->
     </div>
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    @include('Template.footer')
-  </footer>
+ 
 </div>
 <!-- ./wrapper -->
 

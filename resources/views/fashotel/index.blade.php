@@ -47,7 +47,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <tr style="border-color: red;">
 
                             <th>No</th>
-                            <th>Tipe Kamar</th>
+                            <th>Nama Fasilitas</th>
                             <th>Keterangan</th>
                             <th style="text-align: center;">Gambar</th>
                             <th style="text-align: center;">Aksi</th>

@@ -22,12 +22,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Sidebar Container -->
  
   <!-- Content Wrapper. Contains page content -->
-  <div class="container mt-3">
-    
+  
   <!-- /.content-wrapper -->
+ <div class="container mt-5" style="margin-left: 160px; margin-top:20px;" >
+
+
   <div class="row">
     <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
+        <div class="pull-left" style="margin-top:10px; margin-left:550px;">
             <h2>Tambah Data Kamar</h2>
         </div>
         <div class="pull-right">
@@ -47,23 +49,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
 @endif
    
-<form action="{{ route('kamar.store') }}" method="POST" enctype="multipart/form-data">
+
+    <div class="container mt-5" style="margin-top: 60px; margin-left:130px;">
+
+    <div class="card" style="width: 70rem; background-color:#F0F8FF">
+  <div class="card-body">
+    <form action="{{ route('kamar.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
   
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
-            {{-- <div class="form-group">
-                <strong>Tipe Kamar:</strong>
-                <input type="text" name="tipe_kamar" class="form-control" placeholder="Tipe Kamar">
-            </div> --}}
-            <select name="tipe_kamar" id="tipe_kamar" class="form-control mb-3">
+         <select name="tipe_kamar" id="tipe_kamar" class="form-control mb-3">
                     <option selected class="form-select form-check disabled text-muted" aria-label="disabled select example" disabled>Pilih salah satu tipe kamar</option>
                     <option value="Superior">Superior</option>
                     <option value="Deluxe">Deluxe</option>
                 </select>
             </div>
-           
-        <div class="col-xs-12 col-sm-12 col-md-12">
+
+
+  <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Jumlah Kamar:</strong> 
                 <input type="number" name="jml_kamar" class="form-control" placeholder="Jumlah Kamar">
@@ -75,16 +79,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
    
 </form>
+
+  </div>
+</div>
+
+
   <!-- Control Sidebar -->
   </div>
     <!-- Control sidebar content goes here -->
   <!-- /.control-sidebar -->
     </div>
   <!-- Main Footer -->
-  <footer class="main-footer">
-    @include('Template.footer')
-  </footer>
-</div>
+  
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->

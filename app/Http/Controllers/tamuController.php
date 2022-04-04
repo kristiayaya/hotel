@@ -17,7 +17,9 @@ class tamuController extends Controller
         $faskamar = DB::table('faskamar')->where('tipe_kamar', 'superior')->get();
         // dd($faskamar);
         // dd($superior, $deluxe);
-        return view('Template.tamkam', compact('faskamar'));
+        $title = DB::table('faskamar')->where('tipe_kamar', 'superior')->value('tipe_kamar');
+        // dd($faskamar);
+        return view('Template.tamkam', compact('faskamar', 'title'));
     }
     
     /**
@@ -28,8 +30,12 @@ class tamuController extends Controller
     public function deluxe()
     {
         $faskamar = DB::table('faskamar')->where('tipe_kamar', 'deluxe')->get();
+
+        $title = DB::table('faskamar')->where('tipe_kamar', 'deluxe')->value('tipe_kamar');
         // dd($faskamar);
-        return view('Template.tamkam', compact('faskamar'));
+        return view('Template.tamkam', compact('faskamar', 'title'));
+
+        // return view('Template.tamkam', (['faskamar' => $faskamar, 'title' => $title ]));
         
     }
 

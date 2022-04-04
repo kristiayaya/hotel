@@ -36,7 +36,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
             <div class="pull-right" style="margin-bottom:15px; margin-left:420px;">
-                <a class="btn btn-primary" href="{{ route('faskamar.index') }}"> Kembali</a>
+                <a class="btn btn-primary" href="{{ route('fashotel.index') }}"> Kembali</a>
             </div>
         </div>
     </div>

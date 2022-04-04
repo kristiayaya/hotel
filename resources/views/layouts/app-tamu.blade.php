@@ -71,11 +71,11 @@
         </nav>
       </header>
       
-      @yield('content')
 
 
     <div class="p-3">
     
+      @yield('content')
 
     </div>
 
