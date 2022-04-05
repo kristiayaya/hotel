@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateFaskamarTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+   
     public function up()
     {
         Schema::create('faskamar', function (Blueprint $table) {

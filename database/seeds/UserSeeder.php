@@ -13,7 +13,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         $admin = User::create([
-            'name' => 'Admin Role',
+            'name' => 'Admin',
             'email' => 'admin@role.test',
             'password' => bcrypt('12345678')
         ]);
@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
         $admin->assignRole('admin');
 
         $user = User::create([
-            'name' => 'Tamu Role',
+            'name' => 'Tamu',
             'email' => 'tamu@role.test',
             'password' => bcrypt('123456789')
         ]);
@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
         $user->assignRole('tamu');
 
         $resepsionis = User::create([
-            'name' => 'Resepsionis Role',
+            'name' => 'Resepsionis',
             'email' => 'resepsionis@role.test',
             'password' => bcrypt('12345678910')
         ]);

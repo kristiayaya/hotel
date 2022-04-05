@@ -7,11 +7,11 @@
   <div class="col">
   
   <div class="display-2 text-center" style="margin-bottom : 7%;">Fasilitas Kamar {{ $title }}</div>
-  <div class=""><a href="/kamartamu" type="button"class="btn btn-danger" style="margin-left : 10px; margin-bottom : -20px">kembali</a></div>
+  <div class=""><a href="/kamartamu" type="button"class="btn btn-danger" style="margin-left : 10px; margin-top : 2px">kembali</a></div>
   
   </div>
 <main>
-  <div class="album py-5 bg-light">
+  <div class="album py-5 bg-light" style="margin-top:20px;">
     <div class="container">
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">

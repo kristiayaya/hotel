@@ -70,7 +70,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Jumlah Kamar:</strong> 
-                <input type="number" name="jml_kamar" class="form-control" placeholder="Jumlah Kamar">
+                <input type="number" min=1 name="jml_kamar" class="form-control" placeholder="Jumlah Kamar">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

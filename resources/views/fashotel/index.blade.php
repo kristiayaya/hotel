@@ -36,10 +36,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
 
             @if ($message = Session::get('success'))
-            <div class="alert alert-success">
+            <div class="alert alert-success" style="width: 1375px; height:60px; margin-top:24px;">
                 <p>{{ $message }}</p>
             </div>
-            @endif
+            @endif 
 
             <div class="container" style="width:123%; max-width: 125%;">
                 <table class="table table-bordered " style=" margin-top:1%; border-color: red; background-color : white">

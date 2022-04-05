@@ -4,7 +4,7 @@
      
         @if(Auth::user()->roles[0]['name'] == 'admin')
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ route('home') }}" class="nav-link text-white">Home</a>
+            <a href="{{ route('home') }}" class="nav-link text-white ">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{ route('kamar.index') }}" class="nav-link text-white">Kamar</a>
@@ -18,7 +18,7 @@
         @endif
         @if(Auth::user()->roles[0]['name'] == 'resepsionis')
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link text-white">Home</a>
+            <a href="#" class="nav-link text-white" >Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{ route('reservasi.index') }}" class="nav-link text-white">Reservasi</a>
@@ -30,8 +30,8 @@
                 {{ Auth::user()->name }}
             </a>
 
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+            <div class="dropdown-menu dropdown-menu-right"  aria-labelledby="navbarDropdown">
+                <a class="dropdown-item"  href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                     {{ __('Logout') }}
                 </a>

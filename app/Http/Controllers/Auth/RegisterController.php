@@ -76,7 +76,7 @@ class RegisterController extends Controller
     }protected function registered()
     {
         $this->guard()->logout();
-        return redirect()->route('login')->with('succes', "Akun Anda Berhasil Teregristasi, Silahkan Untuk Login Ulang");
+        return redirect()->route('login')->with('success', "Akun Anda Berhasil Teregristasi, Silahkan Untuk Login Ulang");
     }
         // return view('auth.login')->with($user);
     }

@@ -19,16 +19,16 @@
               <ul class="navbar-nav me-auto mb-2 mb-md-0">
               
                 <li class="nav-item text-white">
-                  <a class="nav-link active text-white" style="font-size : 22px; margin-right: 10px;"  aria-current="page" href="/Beranda">Home</a>
+                  <a class="nav-link active text-white" style="font-size : 20px; margin-right: 5px;"  aria-current="page" href="/Beranda">Home</a>
                 </li
                 <li class="nav-item">
-                  <a class="nav-link active text-white" style="font-size : 22px; margin-right: 10px;"  href="{{ route('tamu.kamar') }}">Kamar</a>
+                  <a class="nav-link active text-white" style="font-size : 20px; margin-right: 5px;"  href="{{ route('tamu.kamar') }}">Kamar</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active text-white" style="font-size : 22px; margin-right: 10px; width: 153px;"  href="{{ route('FasilitasHotel')}} ">Fasilitas Hotel</a>
+                  <a class="nav-link active text-white" style="font-size : 20px; margin-right: 5px; width: 153px;"  href="{{ route('FasilitasHotel')}} ">Fasilitas Hotel</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active text-white" style="font-size : 22px; margin-right: 10px;"  href="{{ route('datareservasi')}}">Pemesanan</a>
+                  <a class="nav-link active text-white" style="font-size : 20px; margin-right: 5px;"  href="{{ route('datareservasi')}}">Pemesanan</a>
                 </li>
                <li class="nav-item d-none d-sm-inline-block"></li>
               
@@ -41,7 +41,7 @@
                             
                             
                             <li class="nav-item">
-                            <a style="margin-left: 1090px;font-size : 22px; margin-right: 10px;" class="nav-link active text-white" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            <a style="margin-left: 1090px;font-size : 20px; margin-right: 5px;" class="nav-link active text-white" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                            document.getElementById('logout-form').submit();">
                           {{ __('Logout') }}
                       </a></li>
@@ -71,9 +71,9 @@
         </nav>
       </header>
       
+      
 
-
-    <div class="p-3">
+    <div class="">
     
       @yield('content')
 

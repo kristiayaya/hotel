@@ -52,7 +52,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Jumlah Kamar:</strong>
-                    <input type="number" name="jml_kamar" value="{{ $kamar->nama }}" class="form-control" placeholder="Jumlah Kamar">
+                    <input type="number" min=1  name="jml_kamar" value="{{ $kamar->nama }}" class="form-control" placeholder="Jumlah Kamar">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center" style="margin-top:40px;" >

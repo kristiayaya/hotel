@@ -100,7 +100,7 @@
     <label for="inputPassword6" class="col-form-label">Jumlah</label>
   </div>
   <div class="col-auto">
-    <input type="number" min=0 name="jml_kamar" class="form-control" aria-describedby="passwordHelpInline">
+    <input type="number" min=1 name="jml_kamar" class="form-control" aria-describedby="passwordHelpInline">
   </div>
 
   <div class="col-auto">

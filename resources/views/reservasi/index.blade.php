@@ -95,7 +95,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
     @endif
    
-    <table class="table table-bordered">
+    <table class="table table-bordered" style="
+    width: 1350px;
+    margin-left: -141px;
+">
         <tr>
             <th>No</th>
             <th>Tanggal Cek In</th>
