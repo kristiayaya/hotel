@@ -34,7 +34,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <h2 style="margin-left : 500px">Tampilan Data Kamar</h2>
                     </div>
             <div class="pull-right" style="margin-bottom:15px;">
-                <a class="btn btn-primary" href="{{ route('kamar.index') }}" style="margin-left: 200px;  background-color: 	#32CD32;border: 0px;">  Kembali</a>
+                <a class="btn btn-primary" href="{{ route('kamar.index') }}" style="margin-left: 300px;  background-color: 	#32CD32;border: 0px;">  Kembali</a>
             </div>
         </div>
     </div>

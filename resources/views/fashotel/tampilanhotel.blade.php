@@ -20,7 +20,7 @@
  </div>
 
    --}}
-
+   <div class="display-2 text-center" style="margin-top :6%;">Fasilitas Hotel</div>
     <div class="album py-5" style="background-color:#A#ADD8E6;">
       <div style="    max-width: 90%;" class="container mt-5">
         

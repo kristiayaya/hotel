@@ -30,7 +30,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Data Reservasi</h2>
+                <p style="font-size:40pt; margin-left:400px;">Data Reservasi</h2>
             </div>
             
         </div>
@@ -95,7 +95,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
     @endif
    
-    <table class="table table-bordered" style="
+    <table class="table table-striped" style="
     width: 1350px;
     margin-left: -141px;
 ">
@@ -126,7 +126,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <td>
                 <form action="{{ route('reservasi.destroy',$fas->id) }}" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('reservasi.show',$fas->id) }}">Tampil</a>
+                    <a class="btn btn-dark" href="{{ route('reservasi.show',$fas->id) }}">Tampil</a>
     
                     <a class="btn btn-primary" href="{{ route('reservasi.edit',$fas->id) }}">Edit</a>
    
@@ -145,9 +145,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.control-sidebar -->
     </div>
   <!-- Main Footer -->
-  <footer class="main-footer">
-    @include('Template.footer')
-  </footer>
+ 
 </div>
 <!-- ./wrapper -->
 

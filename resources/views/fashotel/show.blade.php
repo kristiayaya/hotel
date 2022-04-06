@@ -13,7 +13,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     }
   </style>
 </head>
-<body class="hold-transition sidebar-mini" style="background-color : #ddd">>
+<body class="hold-transition sidebar-mini" style="background-color : #ddd">
 <div class="wrapper">
 
   <!-- Navbar -->

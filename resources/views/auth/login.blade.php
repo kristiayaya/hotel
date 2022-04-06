@@ -85,7 +85,7 @@
                                                     <form action="#" class="signin-form">
                                                     <div class="form-group mb-3"  style="margin-top : 45px">
                                                         <label  style="margin-left:15px;" class="label text-white" for="name">{{ __('E-Mail') }}</label>
-                                                        <input name="email" id="email" type="email " class="form-control @error('email') is-invalid @enderror" style="background-color :#fffafa;" placeholder="Username" required>
+                                                        <input name="email" id="email" type="email " class="form-control @error('email') is-invalid @enderror" style="background-color :#fffafa;" placeholder="Email" required>
                                                         @error('email')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -107,7 +107,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <button type="submit" class="form-control btn submit px-3" style="    color: #302f2f;
-                                                        background-color: #fffafa;">Sign In</button>
+                                                        background-color: #fffafa;">Login</button>
                                                     </div>
                                                 </form>
                                     </div>
@@ -142,7 +142,7 @@
 
                               <div class="form-group mb-3">
                                   <label class="label" for="name">Email</label>
-                                  <input name="email" id="email" value="{{ old('email') }}" type="text" class="form-control @error('email') is-invalid @enderror" placeholder="Username" required>
+                                  <input name="email" id="email" value="{{ old('email') }}" type="text" class="form-control @error('email') is-invalid @enderror" placeholder="Email" required>
                                   @error('email')
                                   <span class="invalid-feedback" role="alert">
                                       <strong>{{ $message }}</strong>
@@ -161,12 +161,12 @@
                                 </div>
 
                         <div class="form-group mb-3">
-                            <label class="label" for="password">Password Confirm</label>
-                          <input name="password_confirmation" id="password-confirm" type="password" class="form-control" placeholder="Confirm Password" required>
+                            <label class="label" for="password">Confirm Password</label>
+                          <input name="password_confirmation" id="Confirm Password" type="password" class="form-control" placeholder="Confirm Password" required>
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="form-control btn submit px-3" style="color : white; background-color : #302f2f;">Sign Up</button>
+                            <button type="submit" class="form-control btn submit px-3" style="color : white; background-color : #302f2f;">Register</button>
                         </div>
                        
                       </form>

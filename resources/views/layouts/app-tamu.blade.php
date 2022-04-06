@@ -10,7 +10,7 @@
 
     <title>Grand Vacation Hotel</title>
   </head>
-  <body>
+  <body style="background-color :#EEEFF8">
     
     <header>
         <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color:rgb(38,36,36) ">

@@ -15,7 +15,7 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                       <div class="card" style="width: 42rem; height:35rem; margin-left:-200px;">
-                          <img src="{{url('/Gambar/lupe.jpg')}}"class="card-img-top" alt="..." style="width:671px; height:400px">
+                          <img src="{{url('/Gambar/itu.jpg')}}"class="card-img-top" alt="..." style="width:671px; height:400px">
                           <div class="card-body">
                             <h5 class="card-title"><center>Superior Room</center></h5>
                             <br>

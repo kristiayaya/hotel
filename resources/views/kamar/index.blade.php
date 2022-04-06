@@ -31,7 +31,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <h2 style="margin-left : 20px">Data Kamar</h2>
                     </div>
                     <div class="pull-right">
-                        <a class="btn btn-success" href="{{ route('kamar.create') }}" style="margin-left: 8px;background-color: #ffc300;border: 0px;"> Input Data</a>
+                        <a class="btn btn-success" href="{{ route('kamar.create') }}" style="margin-left: 8px;background-color:#9ACD32;border: 0px;"> Input Data</a>
                     </div>
                 </div>
             </div>

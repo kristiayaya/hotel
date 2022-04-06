@@ -33,7 +33,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <h2>Tambah Data Kamar</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('kamar.index') }}"> Kembali</a>
+            <a class="btn btn-primary" style="margin-left:140px; margin-top:10px;" href="{{ route('kamar.index') }}"> Kembali</a>
         </div>
     </div>
 </div>

@@ -9,19 +9,19 @@
         <thead class="text-white" style="background-color:#FA8072; border-style : none;">
 
           <th>No</th>
-          <th>Tanggal Cek In</th>
-          <th>Tanggal Cek Out</th>
+          <th>Tanggal Chek In</th>
+          <th>Tanggal Chek Out</th>
           <th>Jumlah Kamar</th>
           <th>Email</th>
           <th>No Handphone</th>
-          <th>Nama Pemesanan</th>
+          <th>Nama Pemesan</th>
           <th>Nama Tamu</th>
           <th>Tipe Kamar</th>
           <th>Aksi</th>
         </thead>
       </tr>
       @foreach ($data as $i => $dataa)
-      <tr>
+      <tr class="table-light">
         <td>{{ ++$i }}</td>
         <td>{{ $dataa->tgl_cekin }}</td>
         <td>{{ $dataa->tgl_cekout }}</td>
