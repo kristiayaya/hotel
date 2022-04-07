@@ -109,6 +109,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <th>Nama Pemesanan</th>
             <th>Nama Tamu</th>
             <th>Tipe Kamar</th>
+            <th>Status</th>
+            
             <th>Aksi</th>
         </tr>
         @foreach ($reservasi as $i => $fas)
@@ -122,19 +124,45 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <td>{{ $fas->nama_pemesan }}</td>
             <td>{{ $fas->nama_tamu }}</td>
             <td>{{ $fas->tipe_kamar }}</td>
+            <td>
+
+              @if( $fas->status == 'a')
+            <span class="badge rounded-pill bg-primary">belum check in</span>
+
+            @endif
+            
+            @if( $fas->status == 'b')
+            <span class="badge rounded-pill bg-success">sudah check in</span>
+
+            @endif
+            @if( $fas->status == 'c')
+            <span class="badge rounded-pill bg-secondary">sudah check out</span>
+
+            @endif
+            @if( $fas->status == 'd')
+            <span class="badge rounded-pill bg-secondary">dibatalkan</span>
+
+            @endif
+            </td>
             
             <td>
-                <form action="{{ route('reservasi.destroy',$fas->id) }}" method="POST">
-   
-                    <a class="btn btn-dark" href="{{ route('reservasi.show',$fas->id) }}">Tampil</a>
-    
-                    {{-- <a class="btn btn-primary" href="{{ route('reservasi.edit',$fas->id) }}">Edit</a> --}}
-   
-                    @csrf
-                    {{-- @method('DELETE') --}}
-      
-                    <button type="submit" class="btn btn-danger">Check Out</button>
-                </form>
+              @if($fas->status == 'a')
+              <form action="/reservasi/status/on/{{ $fas->id }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-success">Check In</button>
+              @endif  
+              @if($fas->status == 'b')
+              <form action="/reservasi/status/out/{{ $fas->id }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-danger">Check Out</button>
+              @endif  
+              @if($fas->status == 'a' || $fas->status == 'b' || $fas->status == 'c')
+
+              <form action="/reservasi/status/batal/{{ $fas->id }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-secondary">Batalkan</button>
+              </form>
+              @endif
             </td>
         </tr>
         @endforeach

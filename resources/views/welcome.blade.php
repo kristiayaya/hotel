@@ -135,9 +135,21 @@
 
       <select name="tipe_kamar" id="tipe_kamar" class="form-control">
           <option selected class="form-select form-check disabled text-muted" aria-label="disabled select example" disabled>Pilih salah satu tipe kamar</option>
+          
+          @if($super >= 0)
           <option value="Superior">Superior</option>
+          @else
+          <option class="form-select form-check disabled text-muted" aria-label="disabled select example" disabled>Superior</option>
+          <!-- <option value="Superior" class="disabled text-muted">Superior</option> -->
+          @endif
+          
+          @if($delux >= 0)
           <option value="Deluxe">Deluxe</option>
-      </select>
+          @else
+          <option class="form-select form-check disabled text-muted" aria-label="disabled select example" disabled>Deluxe</option>
+          <!-- <option value="Superior" class="disabled text-muted">Superior</option> -->
+          @endif
+        </select>
   </div>
    
   <button type="submit" class="btn btn-primary" style=" color: white">Konfirmasi Pemesanan</button>

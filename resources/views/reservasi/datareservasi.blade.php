@@ -3,21 +3,24 @@
 @section('content')
 <div class="container" style="width:90%; max-width: 95%;">
 
-      
+@if (session('success'))
+<div class="alert alert-success" role="alert" style="margin-top : 10%; margin-bottom : -80px">
+ Pemesanan Berhasil
+</div>
+@endif
     <table class="table table-bordered" style=" margin-top:7%; border: inset;">
       <tr>
         <thead class="text-white" style="background-color:#FA8072; border-style : none;">
-
           <th>No</th>
-          <th>Tanggal Chek In</th>
-          <th>Tanggal Chek Out</th>
+          <th>Tanggal Check In</th>
+          <th>Tanggal Check Out</th>
           <th>Jumlah Kamar</th>
           <th>Email</th>
           <th>No Handphone</th>
           <th>Nama Pemesan</th>
           <th>Nama Tamu</th>
           <th>Tipe Kamar</th>
-          <th>Aksi</th>
+          <th>Aksi </th>
         </thead>
       </tr>
       @foreach ($data as $i => $dataa)

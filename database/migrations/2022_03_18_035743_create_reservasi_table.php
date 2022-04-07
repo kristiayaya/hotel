@@ -24,6 +24,7 @@ class CreateReservasiTable extends Migration
             $table->string('nama_pemesan');
             $table->string('nama_tamu');
             $table->string('tipe_kamar');
+            $table->string('status');
             $table->timestamps();
         });
     }
