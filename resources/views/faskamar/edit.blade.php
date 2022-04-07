@@ -29,7 +29,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2 style="margin-top: -20px;">Edit Fasilitas Kamar</h2>
+            <h2 style="margin-top: -20px; margin-left: 280px;">Edit Fasilitas Kamar</h2>
         </div>
 
     </div>

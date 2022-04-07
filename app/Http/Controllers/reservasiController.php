@@ -146,6 +146,11 @@ class reservasiController extends Controller
     {
         $reservasi->delete();
         return redirect()->route('reservasi.index')->with('success','Data Reservasi berhasil dihapus');
+
+
+
+
+        // $awal = DB::table('reservasi')->where('id', $reservasi)
     }
 
 

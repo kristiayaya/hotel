@@ -128,12 +128,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
    
                     <a class="btn btn-dark" href="{{ route('reservasi.show',$fas->id) }}">Tampil</a>
     
-                    <a class="btn btn-primary" href="{{ route('reservasi.edit',$fas->id) }}">Edit</a>
+                    {{-- <a class="btn btn-primary" href="{{ route('reservasi.edit',$fas->id) }}">Edit</a> --}}
    
                     @csrf
-                    @method('DELETE')
+                    {{-- @method('DELETE') --}}
       
-                    <button type="submit" class="btn btn-danger">Hapus</button>
+                    <button type="submit" class="btn btn-danger">Check Out</button>
                 </form>
             </td>
         </tr>
