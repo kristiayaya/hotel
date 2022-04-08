@@ -40,6 +40,30 @@
               
               <button type="submit" class="btn btn-danger">Cetak</button>
             </form>
+            <br>
+            @if($dataa->status == 'a')
+
+            <form action="/datareservasi/checkin/{{ $dataa->id }}" method="POST">
+              @csrf
+              <button type="submit" class="btn btn-secondary">check in</button>
+            </form>
+            <br>
+            @endif
+            @if($dataa->status == 'b')
+
+            <form action="/datareservasi/checkout/{{ $dataa->id }}" method="POST">
+              @csrf
+              <button type="submit" class="btn btn-secondary">check out</button>
+            </form>
+            <br>
+            @endif
+            @if($dataa->status == 'a' || $dataa->status == 'b')
+
+            <form action="/datareservasi/batal/{{ $dataa->id }}" method="POST">
+              @csrf
+              <button type="submit" class="btn btn-secondary">batal</button>
+            </form>
+            @endif
           </td>
         </tr>
         @endforeach

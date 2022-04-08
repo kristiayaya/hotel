@@ -29,4 +29,8 @@ class HomeController extends Controller
 
         return view('welcome', compact('super', 'delux'));
     }
+    public function home()
+    {
+        return view('home');
+    }
 }

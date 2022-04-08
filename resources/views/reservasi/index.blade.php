@@ -150,19 +150,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <form action="/reservasi/status/on/{{ $fas->id }}" method="POST">
                 @csrf
                 <button type="submit" class="btn btn-success">Check In</button>
+              </form>
+              <br>
               @endif  
               @if($fas->status == 'b')
               <form action="/reservasi/status/out/{{ $fas->id }}" method="POST">
                 @csrf
                 <button type="submit" class="btn btn-danger">Check Out</button>
+              </form>
+              <br>
               @endif  
-              @if($fas->status == 'a' || $fas->status == 'b' || $fas->status == 'c')
+              @if($fas->status == 'a' || $fas->status == 'b')
 
               <form action="/reservasi/status/batal/{{ $fas->id }}" method="POST">
                 @csrf
                 <button type="submit" class="btn btn-secondary">Batalkan</button>
               </form>
               @endif
+            
             </td>
         </tr>
         @endforeach

@@ -44,6 +44,7 @@ Route::get('/tampilanhoteltamu', function () {
     Auth::routes();
     
     Route::get('/Beranda', 'HomeController@index')->name('beranda');
+    Route::get('/home', 'HomeController@home')->name('home');
     Route::get('/fassuperior', 'tamuController@superior')->name('fassuperior');
     Route::get('/fasdeluxe', 'tamuController@deluxe')->name('fasdeluxe');
     Route::get('/datareservasi', 'datareservasiController@index')->name('datareservasi');
@@ -55,9 +56,15 @@ Route::get('/tampilanhoteltamu', function () {
         return 'Dashboard';
     })->name('dashboard');
     
+    Route::post('/datareservasi/checkin/{id}', 'tamuController@checkin');
+    Route::post('/datareservasi/checkout/{id}', 'tamuController@checkout');
+    Route::post('/datareservasi/batal/{id}', 'tamuController@batal');
+
+
     Route::post('/reservasi/status/on/{id}', 'reservasiController@checkin');
     Route::post('/reservasi/status/out/{id}', 'reservasiController@checkout');
     Route::post('/reservasi/status/batal/{id}', 'reservasiController@batal');
+
     Route::resource('admin','adminController');
     Route::resource('fashotel','fashotelController');
     Route::resource('faskamar','faskamarController');

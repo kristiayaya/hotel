@@ -71,23 +71,33 @@ class reservasiController extends Controller
             'tipe_kamar' => 'required',
         ]);
 
+        // DB::table('kamar')->where('tipe_kamar', $request->tipe_kamar)->value
 
-        reservasi::create([
-            'tgl_cekin' => $request->tgl_cekin,
-            'tgl_cekout' => $request->tgl_cekout,
-            'jml_kamar' => $request->jml_kamar,
-            'nama_pemesan' => $request->nama_pemesan,
-            'email' => $request->email,
-            'no_hp' => $request->no_hp,
-            'nama_tamu' => $request->nama_tamu,
-            'tipe_kamar' => $request->tipe_kamar,
-            'status' => 'a',
-            'id_user' => $id,
-        ]);
+        if($request->jml_kamar >= $jumlah_awal){
+            
+            return redirect()->route('beranda');
+            
+        } else {
+            
+            reservasi::create([
+                'tgl_cekin' => $request->tgl_cekin,
+                'tgl_cekout' => $request->tgl_cekout,
+                'jml_kamar' => $request->jml_kamar,
+                'nama_pemesan' => $request->nama_pemesan,
+                'email' => $request->email,
+                'no_hp' => $request->no_hp,
+                'nama_tamu' => $request->nama_tamu,
+                'tipe_kamar' => $request->tipe_kamar,
+                'status' => 'a',
+                'id_user' => $id,
+            ]);
 
-        DB::table('kamar')->where('tipe_kamar', $request->tipe_kamar)->update([
-            'jml_kamar' => $jumlah_awal - $request->jml_kamar
-        ]);
+            DB::table('kamar')->where('tipe_kamar', $request->tipe_kamar)->update([
+                'jml_kamar' => $jumlah_awal - $request->jml_kamar
+            ]);
+
+        }
+        
 
         return redirect()->route('datareservasi')->with('success','Data berhasil di input');
     }
@@ -133,6 +143,7 @@ class reservasiController extends Controller
             'nama_tamu' => 'required',
             'tipe_kamar' => 'required',
         ]);
+
         $reservasi->update($request->all());
         return redirect()->route('reservasi.index')->with('success','Data Reservasi berhasil di update');
     }
@@ -178,6 +189,19 @@ class reservasiController extends Controller
 
             'status' => 'c'
 
+        ]);
+
+        $jumlah_awal = DB::table('reservasi')->where('id', $id)->value('jml_kamar');
+
+        $tipe_kamar = DB::table('reservasi')->where('id', $id)->value('tipe_kamar');
+        
+        $jumlah_kamar = DB::table('kamar')->where('tipe_kamar', $tipe_kamar)->value('jml_kamar');
+
+        
+        $jumlah_akhir = $jumlah_awal + $jumlah_kamar;
+        
+        DB::table('kamar')->where('tipe_kamar', $tipe_kamar)->update([
+            'jml_kamar' => $jumlah_akhir
         ]);
         
         return redirect()->route('reservasi.index');

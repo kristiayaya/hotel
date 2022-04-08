@@ -101,4 +101,71 @@ class tamuController extends Controller
     {
         //
     }
+
+    public function checkin($id)
+    {
+
+        // dd($id);
+
+        DB::table('reservasi')->where('id', $id)->update([
+
+            'status' => 'b'
+
+        ]);
+        
+        return redirect()->route('datareservasi');
+        
+    }
+
+    public function checkout($id)
+    {
+
+        // dd($id);
+
+        DB::table('reservasi')->where('id', $id)->update([
+
+            'status' => 'c'
+
+        ]);
+
+        $jumlah_awal = DB::table('reservasi')->where('id', $id)->value('jml_kamar');
+
+        $tipe_kamar = DB::table('reservasi')->where('id', $id)->value('tipe_kamar');
+        
+        $jumlah_kamar = DB::table('kamar')->where('tipe_kamar', $tipe_kamar)->value('jml_kamar');
+
+        
+        $jumlah_akhir = $jumlah_awal + $jumlah_kamar;
+        
+        DB::table('kamar')->where('tipe_kamar', $tipe_kamar)->update([
+            'jml_kamar' => $jumlah_akhir
+        ]);
+        
+        return redirect()->route('datareservasi');
+        
+    }
+    public function batal($id)
+    {
+
+        $jumlah_awal = DB::table('reservasi')->where('id', $id)->value('jml_kamar');
+
+        $tipe_kamar = DB::table('reservasi')->where('id', $id)->value('tipe_kamar');
+        
+        $jumlah_kamar = DB::table('kamar')->where('tipe_kamar', $tipe_kamar)->value('jml_kamar');
+
+        
+        $jumlah_akhir = $jumlah_awal + $jumlah_kamar;
+        
+        // dd($jumlah_akhir);
+
+        DB::table('reservasi')->where('id', $id)->update([
+
+            'status' => 'd',
+            'jml_kamar' => $jumlah_akhir
+
+        ]);
+        
+        return redirect()->route('datareservasi');
+        
+    }
 }

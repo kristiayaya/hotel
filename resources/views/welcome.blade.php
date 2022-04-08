@@ -137,14 +137,14 @@
           <option selected class="form-select form-check disabled text-muted" aria-label="disabled select example" disabled>Pilih salah satu tipe kamar</option>
           
           @if($super >= 0)
-          <option value="Superior">Superior</option>
+      <option value="Superior">Superior - jumlah : {{ $super}}</option>
           @else
           <option class="form-select form-check disabled text-muted" aria-label="disabled select example" disabled>Superior</option>
           <!-- <option value="Superior" class="disabled text-muted">Superior</option> -->
           @endif
           
           @if($delux >= 0)
-          <option value="Deluxe">Deluxe</option>
+          <option value="Deluxe">Deluxe jumlah : {{ $delux}}</option>
           @else
           <option class="form-select form-check disabled text-muted" aria-label="disabled select example" disabled>Deluxe</option>
           <!-- <option value="Superior" class="disabled text-muted">Superior</option> -->
